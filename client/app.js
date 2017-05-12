@@ -9,6 +9,8 @@ import router from './router'
 import store from './store'
 import * as filters from './filters'
 import { TOGGLE_SIDEBAR } from 'vuex-store/mutation-types'
+import VueI18n from 'vue-i18n'
+import messages from './i18n'
 
 Vue.router = router
 Vue.use(VueAxios, axios)
@@ -24,11 +26,17 @@ Vue.use(VueAuth, {
   },
   http: require('@websanova/vue-auth/drivers/http/axios.1.x.js'),
   router: require('@websanova/vue-auth/drivers/router/vue-router.2.x.js'),
-  loginData: { url: 'http://localhost:6789/login', fetchUser: false },
+  loginData: { url: 'https://api-demo.websanova.com/api/v1/auth/login', fetchUser: false },
   refreshData: { enabled: false }
 })
 
 Vue.use(NProgress)
+
+Vue.use(VueI18n)
+const i18n = new VueI18n({
+  locale: 'zh-CN',
+  messages
+})
 
 // Enable devtools
 Vue.config.devtools = true
@@ -54,6 +62,7 @@ const app = new Vue({
   router,
   store,
   nprogress,
+  i18n,
   ...App
 })
 

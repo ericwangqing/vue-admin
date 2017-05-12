@@ -1,17 +1,17 @@
 <template>
 <div class="content has-text-centered">
-  <h1 class="is-title is-bold">Login</h1>
+  <h1 class="is-title is-bold">用户登录</h1>
 
   <div class="columns is-vcentered">
     <div class="column is-6 is-offset-3">
       <div class="box">
         <div v-show="error" style="color:red; word-wrap:break-word;">{{ error }}</div>
         <form v-on:submit.prevent="login">
-          <label class="label">Email</label>
+          <label class="label">邮件</label>
           <p class="control">
             <input v-model="data.body.username" class="input" type="text" placeholder="email@example.org">
           </p>
-          <label class="label">Password</label>
+          <label class="label">密码</label>
           <p class="control">
             <input v-model="data.body.password" class="input" type="password" placeholder="password">
           </p>
@@ -19,14 +19,14 @@
           <p class="control">
             <label class="checkbox">
               <input type="checkbox" v-model="data.rememberMe">
-              Remember me
+              记住密码
             </label>
           </p>
 
           <hr>
           <p class="control">
-            <button type="submit" class="button is-primary">Login</button>
-            <button class="button is-default">Cancel</button>
+            <button type="submit" class="button is-primary">登录</button>
+            <button class="button is-default">取消</button>
           </p>
         </form>
       </div>

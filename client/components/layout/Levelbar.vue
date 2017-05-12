@@ -52,7 +52,7 @@ export default {
       }
     },
     name () {
-      return this.$route.name
+      return this.$t(this.$route.name.toLowerCase())
     }
   },
 
